@@ -12,15 +12,20 @@ public class C04_FileDownload extends TestBase {
     //      - https://the-internet.herokuapp.com/download adresine gidelim.
     //      - code.txt dosyasını indirelim
     //4. Ardından isExist( )  methodunda dosyanın başarıyla indirilip indirilmediğini test edelim
+
+
+    @Test
+    public void downloadTesti() throws InterruptedException {
+        driver.get("https://the-internet.herokuapp.com/download");
+        driver.findElement(By.xpath("//a[.='download.png']")).click();
+        Thread.sleep(3000);
+    }
+
     @Test
     public void isExistTesti(){
         String dosyaYolu= System.getProperty("user.home")+ "\\Downloads\\download.png";
         Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
     }
-    @Test
-    public void downloadTesti() throws InterruptedException {
-        driver.get("https://the-internet.herokuapp.com/download");
-        driver.findElement(By.xpath("//a[.='download.png']")).click();
-        Thread.sleep(5000);
-    }
+
+
 }

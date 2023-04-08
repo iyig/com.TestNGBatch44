@@ -17,8 +17,8 @@ public class C05_KeyboardActions extends TestBase {
         // ve Enter’a basarak arama yaptirin
         //4- aramanin gerceklestigini test edin
         driver.get("https://www.amazon.com");
-        WebElement aramaKutusu=driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-        Actions actions=new Actions(driver);
+        WebElement aramaKutusu = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+        Actions actions = new Actions(driver);
         actions.click(aramaKutusu).
                 keyDown(Keys.SHIFT).
                 sendKeys("s").

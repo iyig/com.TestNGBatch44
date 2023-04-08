@@ -22,9 +22,11 @@ public class C01_WindowHandle {
         driver.get("https://www.amazon.com");
         String windowHandleDegeri1=driver.getWindowHandle();
         System.out.println("ilk sayfanin window handle degeri : " + driver.getWindowHandle());
+
         driver.switchTo().newWindow(WindowType.WINDOW); // yeni bir pencere acilir
         driver.get("https://www.bestbuy.com");
         System.out.println("2.sayfanin handle degeri : " + driver.getWindowHandle());
+
         String windowHandleDegeri2=driver.getWindowHandle();
         Set<String> handleDegerleriSet=driver.getWindowHandles();
         System.out.println(handleDegerleriSet);

@@ -19,8 +19,10 @@ public class C02_MouseActions extends TestBase {
         Actions actions=new Actions(driver);
         WebElement helloElement=driver.findElement(By.xpath("(//a[@class='nav-a nav-a-2   nav-progressive-attribute'])[1]"));
         actions.moveToElement(helloElement).perform();
+
         WebElement listElementi=driver.findElement(By.xpath("//span[text()='Create a List']"));
         actions.click(listElementi).perform();
+
         String actualtitle= driver.getTitle();
         String arananMetin="Your List";
         Assert.assertTrue(actualtitle.contains(arananMetin));

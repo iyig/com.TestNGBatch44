@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBase;
 import java.time.Duration;
+
 public class C01_ExplicitlyWait extends TestBase {
     //1. Bir class olusturun : WaitTest
     //2. Iki tane metod olusturun : implicitWait() , explicitWait()
@@ -17,6 +18,7 @@ public class C01_ExplicitlyWait extends TestBase {
     //5. “It’s gone!” mesajinin goruntulendigini dogrulayin.
     //6. Add buttonuna basin
     //7. It’s back mesajinin gorundugunu test edin
+
     @Test
     public void implicitlyWaitTest() throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

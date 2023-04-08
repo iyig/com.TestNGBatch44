@@ -15,7 +15,7 @@ public class C04_Screenshot extends TestBase {
     public void screenTest(){
 
         driver.get("https://www.google.com");
-        driver.findElement(By.xpath("//div[text()='Ich stimme zu']")).click();
+       // driver.findElement(By.xpath("//div[text()='Ich stimme zu']")).click();
         // 1.adim : screenshot almak icin obje olusturalim ve deger olarak driver'imizi atayalim
         //          deger olarak driver'i kabul etmesi icin casting yapmamiz gerekir
         TakesScreenshot tss=(TakesScreenshot) driver;

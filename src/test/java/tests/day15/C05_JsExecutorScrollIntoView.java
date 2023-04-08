@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import utilities.TestBase;
+
+import java.io.IOException;
+
 public class C05_JsExecutorScrollIntoView extends TestBase {
     //1- Yeni bir class olusturun : ScroolInto
     //2- hotelmycamp anasayfasina gidin
@@ -18,21 +21,35 @@ public class C05_JsExecutorScrollIntoView extends TestBase {
         actions.sendKeys(Keys.PAGE_DOWN)
                 .sendKeys(Keys.PAGE_DOWN)
                 .perform();
-        driver.findElement(By.xpath("(//a[@class='btn-custom'])[2]")).click();
+        driver.findElement(By.xpath("(//a[@class='btn-custom'])[2]"));
         Thread.sleep(3000);
     }
 
     @Test
-    public void scroolJsExecutor() throws InterruptedException {
+    public void scroolJsExecutor() throws  IOException {
         driver.get("https://www.hotelmycamp.com");
         // 1.adim JsExecutor objesi olustur ve driver'i cast et
         JavascriptExecutor jse = (JavascriptExecutor) driver;
+
         // 2.adim calisacagimiz web elementi locate edelim
         WebElement odaInceleLinki = driver.findElement(By.xpath("(//a[@class='btn-custom'])[2]"));
+
         // 3.adim ilgili script ve argument ile jse.executeScript() calistir
+      // arguments[0] İLK PARAMETRE ELEMENT
         jse.executeScript("arguments[0].scrollIntoView(true);", odaInceleLinki);
-        Thread.sleep(3000);
+       waitFor(3);
         jse.executeScript("arguments[0].click();", odaInceleLinki);
-        Thread.sleep(3000);
+        waitFor(3);
+        takeScreenShotOfPage();
+        //En üste GIT
+        scrollTopJS();
+        waitFor(3);
+        // EN ALTA GİT
+        scrollEndJS();
+        waitFor(3);
+
     }
+
+
+
 }

@@ -9,15 +9,17 @@ public class C04_DragAndDrop extends TestBase {
     //Yeni bir class olusturalim: MouseActions2
     @Test
     public void test01() throws InterruptedException {
-        //1- https://demoqa.com/droppable adresine gidelim
+  //      1- https://demoqa.com/droppable adresine gidelim
         driver.get("https://demoqa.com/droppable");
-        //2- “Drag me” butonunu tutup “Drop here” kutusunun ustune birakalim
+
+  //      2- “Drag me” butonunu tutup “Drop here” kutusunun ustune birakalim
         Actions actions = new Actions(driver);
         WebElement tasinacakElement = driver.findElement(By.xpath("//div[.='Drag me']"));
         WebElement tasinacakHedefElement = driver.findElement(By.xpath("(//div[@id='droppable'])[1]"));
         actions.dragAndDrop(tasinacakElement, tasinacakHedefElement).perform();//bu sekilde tasinacak elementi tasidik
-        //dranAndDrop=> sürükle ve bırak demek
+        //    dranAndDrop=> sürükle ve bırak demek
         Thread.sleep(7000);
+
         //3- “Drop here” yazisi yerine “Dropped!” oldugunu test edin
       WebElement droppedYazisi= driver.findElement(By.xpath("//*[text()='Dropped!']"));
         String actualDropYazisi = tasinacakHedefElement.getText();

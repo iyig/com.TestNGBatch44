@@ -12,6 +12,7 @@ public class C01_KeyboardActions extends TestBase {
     public void test01() throws InterruptedException {
         //2- https://html.com/tags/iframe/ sayfasina gidelim
         driver.get("https://html.com/tags/iframe/");
+
         //3- video’yu gorecek kadar asagi inin
         Actions actions=new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN)

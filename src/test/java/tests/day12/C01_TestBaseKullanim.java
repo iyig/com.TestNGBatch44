@@ -10,8 +10,8 @@ public class C01_TestBaseKullanim {
 
     public void test01(){
        // projeniz icerisindeki herhangi bir classdan obje olusturabilir ve
-        // o obje sayesinde ailt olduğu classdaki tüm variable ve methodlara
-        // (access modefier izin verdiği sürece) ulasabiilrim
+        // o obje sayesinde ait olduğu classdaki tüm variable ve methodlara
+        // (access modefier izin verdiği sürece) ulasabilirim
 
         C01_Allerts obj=new C01_Allerts();
         // eger proje kapsamında bir classdan obje olusturulmasıni engellemek isterseniz
